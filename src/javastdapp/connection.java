@@ -1,15 +1,24 @@
 package javastdapp;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 public class connection {
     public static Connection getConnection(){
-        Connection con = null;
-        try {
-        class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost/stuDB","root","");
-        } catch (Exception ex) {
+        String url = "jdbc:mysql://localhost:3306/stuDB";
+        String uname = "root";
+        String pass = "";
+        String query = "SELECT * FROM user";
+ 
+            Connection conn = null;
+        
+            
+            try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = (com.mysql.jdbc.Connection) DriverManager.getConnection(url,uname,pass);
+            }
+            catch(ClassNotFoundException | SQLException ex){
                 System.out.println(ex.getMessage());
-        }
-                return con;
+            }
+        return conn;
     }
 }

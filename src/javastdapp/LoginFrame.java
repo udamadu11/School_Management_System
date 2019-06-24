@@ -1,5 +1,13 @@
 package javastdapp;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.util.logging.PlatformLogger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -188,9 +196,39 @@ public class LoginFrame extends javax.swing.JFrame {
         if(jTextField1.getText().equals("")){
             jL_1.setVisible(true);
         }
-        if(String.valueOf(jPasswordField1.getPassword()).equals("")){
+        else if(String.valueOf(jPasswordField1.getPassword()).equals("")){
             jL_2.setVisible(true);
         }
+        else{
+            Connection conn = connection.getConnection();
+            PreparedStatement ps;
+            
+            try{
+                ps =conn.prepareStatement("SELECT * FROM user WHERE username = ? AND password = ?");
+                ps.setString(1, jTextField1.getText());
+                ps.setString(2, String.valueOf(jPasswordField1.getPassword()));
+                
+                ResultSet rs = ps.executeQuery();
+                
+                if(rs.next())
+                {
+                    Main mf = new Main();
+                    mf.setVisible(true);
+                    mf.pack();
+                    mf.setLocationRelativeTo(null);
+                    this.dispose();
+                    
+                        }else{
+                    System.out.println("No");
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        
+        }
+        
     }//GEN-LAST:event_jB_loginActionPerformed
 
     private void jB_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cancelActionPerformed
