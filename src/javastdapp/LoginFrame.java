@@ -1,11 +1,13 @@
 package javastdapp;
 
+import java.awt.Frame;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import sun.util.logging.PlatformLogger;
 
 /*
@@ -216,6 +218,8 @@ public class LoginFrame extends javax.swing.JFrame {
                     mf.setVisible(true);
                     mf.pack();
                     mf.setLocationRelativeTo(null);
+                    mf.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    Main.jL_user.setText("Welcome" +" " + jTextField1.getText());
                     this.dispose();
                     
                         }else{
