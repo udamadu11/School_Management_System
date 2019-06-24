@@ -206,7 +206,7 @@ public class LoginFrame extends javax.swing.JFrame {
             PreparedStatement ps;
             
             try{
-                ps =conn.prepareStatement("SELECT * FROM user WHERE username = ? AND password = ?");
+                ps = conn.prepareStatement("SELECT * FROM user WHERE username = ? AND password = ?");
                 ps.setString(1, jTextField1.getText());
                 ps.setString(2, String.valueOf(jPasswordField1.getPassword()));
                 
@@ -220,6 +220,8 @@ public class LoginFrame extends javax.swing.JFrame {
                     mf.setLocationRelativeTo(null);
                     mf.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     Main.jL_user.setText("Welcome" +" " + jTextField1.getText());
+                    Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("user")));
+                    Main.jL_4.setText("Course "+Integer.toString(FuncStu.count("user")));
                     this.dispose();
                     
                         }else{
