@@ -1,9 +1,4 @@
 package javastdapp;
-
-
-
-import <any?>;
-import <any?>;
 import java.sql.Connection;
 import java.sql.DriverManager;
 public class connection {
