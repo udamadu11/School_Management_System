@@ -221,7 +221,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     mf.setLocationRelativeTo(null);
                     mf.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     Main.jL_user.setText("Welcome" +" " + jTextField1.getText());
-                    Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("user")));
+                    Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
                     Main.jL_4.setText("Course "+Integer.toString(FuncStu.count("user")));
                     this.dispose();
                     

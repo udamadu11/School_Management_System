@@ -6,6 +6,7 @@
 package javastdapp;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 public class AddStudentForm extends javax.swing.JFrame {
 
     /**
@@ -246,6 +247,15 @@ public class AddStudentForm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jB_cancelActionPerformed
 
+        public boolean vertfText(){
+           if(jT_fname.getText().equals("") || jT_lname.getText().equals("") || jT_phone.getText().equals("") || jT_address.getText().equals("") || jT_birthdate.getText().equals("")){
+               JOptionPane.showMessageDialog(null, "One Or More Field Empty");
+               return  false;
+           }else{
+            return true;
+           }
+        
+        } 
     private void jB_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_addActionPerformed
         
         String fname =  jT_fname.getText();
@@ -257,9 +267,12 @@ public class AddStudentForm extends javax.swing.JFrame {
         if(jR_female.isSelected()){
             sex ="Female";
         }
+        if(vertfText()){
+            student std = new student();
+            std.insertUpdateDelete('i', null, fname, lname, sex, bdate, phone, address);
+            Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
+        }
         
-        student std = new student();
-        std.insertUpdateDelete('i', null, fname, lname, sex, bdate, phone, address);
     }//GEN-LAST:event_jB_addActionPerformed
 
     private void jT_phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_phoneKeyTyped
