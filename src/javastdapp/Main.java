@@ -1,4 +1,7 @@
 package javastdapp;
+
+import javax.swing.JFrame;
+
 public class Main extends javax.swing.JFrame {
 
     public Main() {
@@ -158,6 +161,7 @@ public class Main extends javax.swing.JFrame {
                     addStu.setVisible(true);
                     addStu.pack();
                     addStu.setLocationRelativeTo(null);
+                    addStu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
