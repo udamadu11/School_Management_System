@@ -105,6 +105,11 @@ public class AddStudentForm extends javax.swing.JFrame {
                 jT_phoneActionPerformed(evt);
             }
         });
+        jT_phone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_phoneKeyTyped(evt);
+            }
+        });
 
         jT_address.setColumns(20);
         jT_address.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -238,12 +243,18 @@ public class AddStudentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jT_phoneActionPerformed
 
     private void jB_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cancelActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jB_cancelActionPerformed
 
     private void jB_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_addActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jB_addActionPerformed
+
+    private void jT_phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_phoneKeyTyped
+       if(!Character.isDigit(evt.getKeyChar())){
+           evt.consume();
+       }
+    }//GEN-LAST:event_jT_phoneKeyTyped
 
     /**
      * @param args the command line arguments
