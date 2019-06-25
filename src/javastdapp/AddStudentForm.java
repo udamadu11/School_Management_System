@@ -247,7 +247,19 @@ public class AddStudentForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_cancelActionPerformed
 
     private void jB_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_addActionPerformed
-        // TODO add your handling code here:
+        
+        String fname =  jT_fname.getText();
+        String lname =  jT_lname.getText();
+        String phone =  jT_phone.getText();
+        String address = jT_address.getText();
+        String bdate =  jT_birthdate.getText();
+        String sex = "Male";
+        if(jR_female.isSelected()){
+            sex ="Female";
+        }
+        
+        student std = new student();
+        std.insertUpdateDelete('i', null, fname, lname, sex, bdate, phone, address);
     }//GEN-LAST:event_jB_addActionPerformed
 
     private void jT_phoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_phoneKeyTyped

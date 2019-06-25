@@ -15,13 +15,13 @@ public class student {
         
         if(operation == 'i'){
             try {
-                ps = conn.prepareStatement("INSERT INTO student(fname,lname,sex,birthdate,phone,adress) VALUES(?,?,?,?,?,?)");
+                ps = conn.prepareStatement("INSERT INTO student(fname,lname,sex,birthdate,phone,address) VALUES(?,?,?,?,?,?)");
                 ps.setString(1, fname);
                 ps.setString(2, lname);
-                ps.setString(1, sex);
-                ps.setString(1, bdate);
-                ps.setString(1, phone);
-                ps.setString(1, address);
+                ps.setString(3, sex);
+                ps.setString(4, bdate);
+                ps.setString(5, phone);
+                ps.setString(6, address);
                 
                 if(ps.executeUpdate() > 0){
                     JOptionPane.showMessageDialog(null, "New student Added");
@@ -31,5 +31,9 @@ public class student {
                 Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+
+    void insertUpdateDelete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
