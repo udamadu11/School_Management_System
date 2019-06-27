@@ -383,4 +383,8 @@ public class ManageStudent extends javax.swing.JFrame {
     private javax.swing.JTextField jT_phone;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private boolean vertfText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
