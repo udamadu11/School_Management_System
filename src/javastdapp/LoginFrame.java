@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import sun.util.logging.PlatformLogger;
 
 /*
@@ -226,6 +227,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     this.dispose();
                     
                         }else{
+                    JOptionPane.showMessageDialog(null, "Incorrect Password or user name");
                     System.out.println("No");
                 }
                 
