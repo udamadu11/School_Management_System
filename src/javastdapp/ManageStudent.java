@@ -343,6 +343,7 @@ public class ManageStudent extends javax.swing.JFrame {
             jR_female.setSelected(true);
             jR_male.setSelected(false);
         }
+        jT_birthdate.setText(model.getValueAt(rowIndex, 4).toString());
         jT_phone.setText(model.getValueAt(rowIndex, 5).toString());
         jT_address.setText(model.getValueAt(rowIndex, 6).toString());
         
