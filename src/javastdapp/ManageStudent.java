@@ -53,6 +53,8 @@ public class ManageStudent extends javax.swing.JFrame {
         jB_edit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jT_search = new javax.swing.JTextField();
+        jL_fname2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -172,6 +174,28 @@ public class ManageStudent extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
+        jT_search.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jT_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_searchActionPerformed(evt);
+            }
+        });
+        jT_search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jT_searchKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jT_searchKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jT_searchKeyTyped(evt);
+            }
+        });
+
+        jL_fname2.setBackground(new java.awt.Color(0, 0, 0));
+        jL_fname2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jL_fname2.setText("Search Value  :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -214,7 +238,12 @@ public class ManageStudent extends javax.swing.JFrame {
                                 .addGap(220, 220, 220)
                                 .addComponent(jB_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jL_fname2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jT_search, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
@@ -227,7 +256,9 @@ public class ManageStudent extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jL_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jT_id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jT_id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jT_search, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_fname2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jL_fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,7 +292,7 @@ public class ManageStudent extends javax.swing.JFrame {
                             .addComponent(jB_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB_remove, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(160, 160, 160)
                         .addComponent(jScrollPane2)))
                 .addContainerGap())
         );
@@ -341,6 +372,24 @@ public class ManageStudent extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jT_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jT_searchActionPerformed
+
+    private void jT_searchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_searchKeyTyped
+        
+        
+    }//GEN-LAST:event_jT_searchKeyTyped
+
+    private void jT_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_searchKeyPressed
+        
+    }//GEN-LAST:event_jT_searchKeyPressed
+
+    private void jT_searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jT_searchKeyReleased
+        jTable1.setModel(new DefaultTableModel(null,new Object[]{"Id","First Name","Last Name","Sex","BirthDate","Phone","Address"}));
+        std.FillStdTable(jTable1, jT_search.getText());
+    }//GEN-LAST:event_jT_searchKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -369,10 +418,8 @@ public class ManageStudent extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManageStudent().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ManageStudent().setVisible(true);
         });
     }
 
@@ -384,6 +431,7 @@ public class ManageStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jL_birthdate;
     private javax.swing.JLabel jL_fname;
     private javax.swing.JLabel jL_fname1;
+    private javax.swing.JLabel jL_fname2;
     private javax.swing.JLabel jL_lname;
     private javax.swing.JLabel jL_phone;
     private javax.swing.JLabel jL_sex;
@@ -399,6 +447,7 @@ public class ManageStudent extends javax.swing.JFrame {
     private javax.swing.JTextField jT_id;
     private javax.swing.JTextField jT_lname;
     private javax.swing.JTextField jT_phone;
+    private javax.swing.JTextField jT_search;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
