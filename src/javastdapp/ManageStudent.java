@@ -5,6 +5,7 @@
  */
 package javastdapp;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,7 +46,7 @@ public class ManageStudent extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jT_address = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jB_add = new javax.swing.JButton();
+        jB_add2 = new javax.swing.JButton();
         jB_remove = new javax.swing.JButton();
         jL_fname1 = new javax.swing.JLabel();
         jT_id = new javax.swing.JTextField();
@@ -121,11 +122,11 @@ public class ManageStudent extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Student");
 
-        jB_add.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jB_add.setText("Add");
-        jB_add.addActionListener(new java.awt.event.ActionListener() {
+        jB_add2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jB_add2.setText("Add");
+        jB_add2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_addActionPerformed(evt);
+                jB_add2ActionPerformed(evt);
             }
         });
 
@@ -196,7 +197,7 @@ public class ManageStudent extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jB_add, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jB_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jB_remove))
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -257,7 +258,7 @@ public class ManageStudent extends javax.swing.JFrame {
                         .addComponent(jB_edit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jB_add, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jB_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB_remove, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -299,24 +300,15 @@ public class ManageStudent extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jT_phoneKeyTyped
 
-    private void jB_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_addActionPerformed
+    private void jB_add2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_add2ActionPerformed
+                    AddStudentForm addStu = new AddStudentForm();
+                    addStu.setVisible(true);
+                    addStu.pack();
+                    addStu.setLocationRelativeTo(null);
+                    addStu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-//        String fname =  jT_fname.getText();
-//        String lname =  jT_lname.getText();
-//        String phone =  jT_phone.getText();
-//        String address = jT_address.getText();
-//        String bdate =  jT_birthdate.getText();
-//        String sex = "Male";
-//        if(jR_female.isSelected()){
-//            sex ="Female";
-//        }
-//        if(vertfText()){
-//            student std = new student();
-//            std.insertUpdateDelete('i', null, fname, lname, sex, bdate, phone, address);
-//            Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
-//        }
 
-    }//GEN-LAST:event_jB_addActionPerformed
+    }//GEN-LAST:event_jB_add2ActionPerformed
 
     private void jB_removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_removeActionPerformed
         this.dispose();
@@ -385,7 +377,7 @@ public class ManageStudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jB_add;
+    private javax.swing.JButton jB_add2;
     private javax.swing.JButton jB_edit;
     private javax.swing.JButton jB_remove;
     private javax.swing.JLabel jL_address;
