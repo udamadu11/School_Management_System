@@ -5,6 +5,8 @@
  */
 package javastdapp;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author TROJAN
@@ -162,6 +164,11 @@ public class ManageStudent extends javax.swing.JFrame {
                 "Id", "First Name", "Last Name", "Sex", "BirthDate", "Phone", "Address"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -205,9 +212,9 @@ public class ManageStudent extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(220, 220, 220)
                                 .addComponent(jB_edit, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)))
-                .addGap(88, 88, 88))
+                .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,6 +329,24 @@ public class ManageStudent extends javax.swing.JFrame {
     private void jB_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_editActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jB_editActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int rowIndex = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        jT_id.setText(model.getValueAt(rowIndex, 0).toString());
+        jT_fname.setText(model.getValueAt(rowIndex, 1).toString());
+        jT_lname.setText(model.getValueAt(rowIndex, 2).toString());
+        if(model.getValueAt(rowIndex, 3).toString().equals("Male")){
+            jR_male.setSelected(true);
+            jR_female.setSelected(false);
+        }else{
+            jR_female.setSelected(true);
+            jR_male.setSelected(false);
+        }
+        jT_phone.setText(model.getValueAt(rowIndex, 5).toString());
+        jT_address.setText(model.getValueAt(rowIndex, 6).toString());
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
