@@ -30,6 +30,8 @@ public class LoginFrame extends javax.swing.JFrame {
      */
     public LoginFrame() {
         initComponents();
+        jL_1.setVisible(false);
+        jL_2.setVisible(false);
         
     }
 
