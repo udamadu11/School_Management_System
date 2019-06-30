@@ -7,11 +7,13 @@ package javastdapp;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 public class AddStudentForm extends javax.swing.JFrame {
 
     /**
      * Creates new form AddStudentForm
      */
+    student std = new student();
     public AddStudentForm() {
         initComponents();
         ButtonGroup bg =new ButtonGroup();
@@ -268,9 +270,12 @@ public class AddStudentForm extends javax.swing.JFrame {
             sex ="Female";
         }
         if(vertfText()){
-            student std = new student();
+            
             std.insertUpdateDelete('i', null, fname, lname, sex, bdate, phone, address);
             Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
+           
+            ManageStudent.jTable1.setModel(new DefaultTableModel(null,new Object[]{"Id","First Name","Last Name","Sex","BirthDate","Phone","Address"}));
+            std.FillStdTable(ManageStudent.jTable1, "");
         }
         
     }//GEN-LAST:event_jB_addActionPerformed
