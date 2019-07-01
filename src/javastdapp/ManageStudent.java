@@ -5,6 +5,7 @@
  */
 package javastdapp;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +21,9 @@ public class ManageStudent extends javax.swing.JFrame {
     public ManageStudent() {
         initComponents();
         std.FillStdTable(jTable1, "");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(jR_male);
+        bg.add(jR_female);
     }
 
     /**
@@ -310,7 +314,16 @@ public class ManageStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_add2ActionPerformed
 
     private void jB_removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_removeActionPerformed
-        this.dispose();
+        
+        if(jT_id.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "No Student Selected");
+        }
+        int id = Integer.valueOf(jT_id.getText());
+        std.insertUpdateDelete('d', id, null, null, null, null, null, null);
+        
+        ManageStudent.jTable1.setModel(new DefaultTableModel(null,new Object[]{"Id","First Name","Last Name","Sex","BirthDate","Phone","Address"}));
+        std.FillStdTable(ManageStudent.jTable1, "");
+        
     }//GEN-LAST:event_jB_removeActionPerformed
 
     private void jT_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_idActionPerformed

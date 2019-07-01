@@ -54,6 +54,21 @@ public class student {
                 Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        if(operation == 'd'){
+            try {
+                ps = conn.prepareStatement("DELETE FROM student WHERE `sid` = ?");
+                ps.setInt(1, id);
+                
+                if(ps.executeUpdate() > 0){
+                    JOptionPane.showMessageDialog(null, "Student Delete");
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }
     
     void FillStdTable(JTable table, String value){
