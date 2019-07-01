@@ -34,6 +34,26 @@ public class student {
                 Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        if(operation == 'u'){
+            try {
+                ps = conn.prepareStatement("UPDATE `student` SET `fname` = ?, `lname` = ?, `sex` = ?, `birthdate` = ?, `phone` = ?, `address` = ?  WHERE `sid` = ?");
+                ps.setString(1, fname);
+                ps.setString(2, lname);
+                ps.setString(3, sex);
+                ps.setString(4, bdate);
+                ps.setString(5, phone);
+                ps.setString(6, address);
+                ps.setInt(7, id);
+                
+                if(ps.executeUpdate() > 0){
+                    JOptionPane.showMessageDialog(null, "Student Updated");
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
     void FillStdTable(JTable table, String value){

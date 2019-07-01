@@ -6,6 +6,7 @@
 package javastdapp;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -316,8 +317,37 @@ public class ManageStudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jT_idActionPerformed
 
+    public boolean vertfText(){
+           if(jT_fname.getText().equals("") || jT_lname.getText().equals("") || jT_phone.getText().equals("") || jT_address.getText().equals("") || jT_birthdate.getText().equals("") || jT_id.getText().equals("")){
+               JOptionPane.showMessageDialog(null, "One Or More Field Empty");
+               return  false;
+           }else{
+            return true;
+           }
+        
+        } 
+    
     private void jB_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_editActionPerformed
-        // TODO add your handling code here:
+         String fname =  jT_fname.getText();
+        String lname =  jT_lname.getText();
+        String phone =  jT_phone.getText();
+        String address = jT_address.getText();
+        String bdate =  jT_birthdate.getText();
+        int id = Integer.valueOf(jT_id.getText());
+        String sex = "";
+        if(jR_female.isSelected()){
+            sex ="Female";
+        }else if(jR_male.isSelected()){
+            sex ="male";
+        }
+        if(vertfText()){
+            
+            std.insertUpdateDelete('u', id, fname, lname, sex, bdate, phone, address);
+            Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
+           
+            ManageStudent.jTable1.setModel(new DefaultTableModel(null,new Object[]{"Id","First Name","Last Name","Sex","BirthDate","Phone","Address"}));
+            std.FillStdTable(ManageStudent.jTable1, "");
+        }
     }//GEN-LAST:event_jB_editActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -398,7 +428,5 @@ public class ManageStudent extends javax.swing.JFrame {
     public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    private boolean vertfText() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
