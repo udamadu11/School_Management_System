@@ -5,6 +5,9 @@
  */
 package javastdapp;
 
+import java.awt.Color;
+import static javafx.scene.paint.Color.color;
+import static javafx.scene.paint.Color.color;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -24,6 +27,10 @@ public class ManageStudent extends javax.swing.JFrame {
         ButtonGroup bg = new ButtonGroup();
         bg.add(jR_male);
         bg.add(jR_female);
+        jTable1.setRowHeight(40);
+        jTable1.setShowGrid(true);
+        jTable1.setGridColor(Color.black);
+        jTable1.setSelectionBackground(Color.blue);
     }
 
     /**
