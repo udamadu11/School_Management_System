@@ -323,6 +323,8 @@ public class ManageStudent extends javax.swing.JFrame {
         
         ManageStudent.jTable1.setModel(new DefaultTableModel(null,new Object[]{"Id","First Name","Last Name","Sex","BirthDate","Phone","Address"}));
         std.FillStdTable(ManageStudent.jTable1, "");
+        Main.jL_3.setText("Students "+Integer.toString(FuncStu.count("student")));
+        
         
     }//GEN-LAST:event_jB_removeActionPerformed
 
