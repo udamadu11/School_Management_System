@@ -71,6 +71,11 @@ public class AddCourse extends javax.swing.JFrame {
         jB_cadd.setBackground(new java.awt.Color(102, 102, 102));
         jB_cadd.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jB_cadd.setText("Add");
+        jB_cadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_caddActionPerformed(evt);
+            }
+        });
 
         jB_cCancel.setBackground(new java.awt.Color(102, 102, 102));
         jB_cCancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -146,6 +151,10 @@ public class AddCourse extends javax.swing.JFrame {
     private void jT_subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_subjectActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jT_subjectActionPerformed
+
+    private void jB_caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_caddActionPerformed
+        
+    }//GEN-LAST:event_jB_caddActionPerformed
 
     /**
      * @param args the command line arguments

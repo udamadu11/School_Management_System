@@ -17,6 +17,8 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jL_4 = new javax.swing.JLabel();
@@ -29,6 +31,13 @@ public class Main extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jM_addCourse = new javax.swing.JMenuItem();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -149,6 +158,18 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu5);
 
+        jMenu1.setText("Course");
+
+        jM_addCourse.setText("Add Course");
+        jM_addCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jM_addCourseActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jM_addCourse);
+
+        jMenuBar2.add(jMenu1);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,6 +201,14 @@ public class Main extends javax.swing.JFrame {
                     mnaStu.setLocationRelativeTo(null);
                     mnaStu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jM_addCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jM_addCourseActionPerformed
+                    AddCourse addcourse = new AddCourse();
+                    addcourse.setVisible(true);
+                    addcourse.pack();
+                    addcourse.setLocationRelativeTo(null);
+                    addcourse.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jM_addCourseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,14 +246,18 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     public static javax.swing.JLabel jL_3;
     public static javax.swing.JLabel jL_4;
     public static javax.swing.JLabel jL_user;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jM_addCourse;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
