@@ -80,6 +80,11 @@ public class AddCourse extends javax.swing.JFrame {
         jB_cCancel.setBackground(new java.awt.Color(102, 102, 102));
         jB_cCancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jB_cCancel.setText("Cancel");
+        jB_cCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_cCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,6 +160,10 @@ public class AddCourse extends javax.swing.JFrame {
     private void jB_caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_caddActionPerformed
         
     }//GEN-LAST:event_jB_caddActionPerformed
+
+    private void jB_cCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cCancelActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_jB_cCancelActionPerformed
 
     /**
      * @param args the command line arguments
