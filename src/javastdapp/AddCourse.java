@@ -14,6 +14,7 @@ public class AddCourse extends javax.swing.JFrame {
     /**
      * Creates new form AddCourse
      */
+    course c = new course();
     public AddCourse() {
         initComponents();
     }
@@ -158,7 +159,9 @@ public class AddCourse extends javax.swing.JFrame {
     }//GEN-LAST:event_jT_subjectActionPerformed
 
     private void jB_caddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_caddActionPerformed
-        
+        String cname = jT_subject.getText();
+        String ccode = jT_subCode.getText();
+        c.insertUpdateDelete('i', WIDTH, cname, ccode);
     }//GEN-LAST:event_jB_caddActionPerformed
 
     private void jB_cCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_cCancelActionPerformed
